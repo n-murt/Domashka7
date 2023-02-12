@@ -3,3 +3,36 @@
 // 0,5 7 -2 -0,2
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
+
+using System;
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        Console.Write("Задайте значение M: ");
+        int m = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Задайте значение N: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Двумерный массив: ");
+        TDarray(m, n);
+    }
+
+    static double[,] TDarray(int m, int n)
+    {
+        Random rand = new Random();
+        double[,] array = new double[m, n];
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                array[i, j] = 20.0 * rand.Next() / 2147483648 - 10.0;
+                Console.Write(String.Format("{0,5:f1}", array[i, j]));
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+        return array;
+    }
+
+}
